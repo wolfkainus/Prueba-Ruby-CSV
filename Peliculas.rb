@@ -28,4 +28,12 @@ class Movie
     "Peliculas de '#{group.first.genre}': #{group.size}"
   end
 #-----------------------------------------------------------------------------------------
+
+#5. Debe haber un método que calcule el promedio de el precio de las películas por genero.
+#-----------------------------------------------------------------------------------------
+  def self.promedio(group)
+    avg = group.inject(0) { |sum, movie| sum + movie.price } / group.size
+    "Promedio de Precio de peliculas '#{group.first.genre}': $#{avg.round(2)}"
+  end
+#-----------------------------------------------------------------------------------------
 end
