@@ -14,4 +14,18 @@ class Movie
     "[#{@genre}] #{@dvd_title} (#{@year}) #{@rating}"
   end
 #-----------------------------------------------------------------------------------------
+
+#4. Debe haber un método que devuelva un listado que agrupe
+#los estudios y cantidad de películas del genero seleccionado realizadas.
+#-----------------------------------------------------------------------------------------
+  def self.studios(group)
+    studios = group.map {|movie| movie.studio}.uniq
+    print "[Estudios: #{studios.size}]: "
+    studios.join(', ')
+  end
+
+  def self.total(group)
+    "Peliculas de '#{group.first.genre}': #{group.size}"
+  end
+#-----------------------------------------------------------------------------------------
 end
